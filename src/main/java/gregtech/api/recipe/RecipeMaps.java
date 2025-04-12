@@ -626,14 +626,14 @@ public final class RecipeMaps {
             if (aCoalAmount <= 0) return Collections.emptyList();
 
             int aDustAmount;
-            int[] baseChances = new int[]{10000, 10000, 10000};
+            int[] baseChances = new int[] { 10000, 10000, 10000 };
             if (builder.getChances() != null) {
                 System.arraycopy(builder.getChances(), 0, baseChances, 0, min(2, builder.getChances().length));
             }
 
             int[] coalChances = baseChances.clone();
             if (aCoalAmount < 9) {
-                 aDustAmount = 1;
+                aDustAmount = 1;
                 coalChances[2] = aCoalAmount * 10000 / 9;
             } else {
                 aDustAmount = aCoalAmount / 9;
